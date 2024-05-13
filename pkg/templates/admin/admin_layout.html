@@ -1,0 +1,82 @@
+<!-- admin_page.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <style>
+        /* styles.css */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 600px; /* Adjust as needed */
+    margin: 20px auto;
+    animation: fadeIn 1s ease-in-out; /* Apply fadeIn animation */
+}
+
+th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+#logoutBtn {
+    background-color: #f44336; /* Red */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#logoutBtn:hover {
+    background-color: #d32f2f; /* Darker Red */
+}
+    </style>
+</head>
+<body>
+    <h1 class="text-center mb-4" style="text-align: center;">Victims</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Column 1</th>
+                <th>Column 2</th>
+                <th>Column 3</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in uset %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ row.username }}</td>
+                <td>{{ row.password }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+   
+
+
+</body>
+</html>
